@@ -11,6 +11,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class AppComponent {
   public employees: Employee[] = [];
   constructor(private employeeService: EmployeeService) {}
+  ngOnInit() {
+    this.getEmployees();
+  }
   public getEmployees(): void {
     this.employeeService.getEmployees().subscribe(
       (response: Employee[]) => {
