@@ -24,7 +24,7 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.findAllEmployees(), HttpStatus.OK);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Employee> show(@PathVariable("id") Long id) {
         return new ResponseEntity<>(employeeService.findEmployeeById(id), HttpStatus.OK);
     }
@@ -39,7 +39,7 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.updateEmployee(employee),HttpStatus.ACCEPTED);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> store(@PathVariable("id") Long id){
         return new ResponseEntity<>(HttpStatus.OK);
     }
